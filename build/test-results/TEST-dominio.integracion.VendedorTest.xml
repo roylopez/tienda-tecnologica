@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dominio.integracion.VendedorTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2019-06-18T23:40:38" hostname="DESKTOP-2H2IQRD" time="3.568">
+  <properties/>
+  <testcase name="productoNoCuentaConGarantia" classname="dominio.integracion.VendedorTest" time="2.625"/>
+  <testcase name="generarGarantiaTest" classname="dominio.integracion.VendedorTest" time="0.143"/>
+  <testcase name="generarGarantiaProductoBajoUmbral" classname="dominio.integracion.VendedorTest" time="0.122"/>
+  <testcase name="generarGarantiaProductoSobreUmbralFinalizacionDomingo" classname="dominio.integracion.VendedorTest" time="0.157"/>
+  <testcase name="productoYaTieneGarantiaTest" classname="dominio.integracion.VendedorTest" time="0.128"/>
+  <testcase name="parametrosRequeridosGarantia" classname="dominio.integracion.VendedorTest" time="0.233"/>
+  <testcase name="generarGarantiaProductoSobreUmbral" classname="dominio.integracion.VendedorTest" time="0.155"/>
+  <system-out><![CDATA[Hibernate: drop table GarantiaExtendida if exists
+Hibernate: drop table Producto if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table GarantiaExtendida (id bigint not null, fechaFinGarantia timestamp, fechaSolicitudGarantia timestamp, nombreCliente varchar(255), precio double not null, ID_PRODUCTO bigint, primary key (id))
+Hibernate: create table Producto (id bigint not null, codigo varchar(255) not null, nombre varchar(255) not null, precio double not null, primary key (id))
+Hibernate: alter table GarantiaExtendida add constraint FKbjleix4hk82jtyvep72rxvung foreign key (ID_PRODUCTO) references Producto
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Producto (codigo, nombre, precio, id) values (?, ?, ?, ?)
+Hibernate: drop table GarantiaExtendida if exists
+Hibernate: drop table Producto if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table GarantiaExtendida (id bigint not null, fechaFinGarantia timestamp, fechaSolicitudGarantia timestamp, nombreCliente varchar(255), precio double not null, ID_PRODUCTO bigint, primary key (id))
+Hibernate: create table Producto (id bigint not null, codigo varchar(255) not null, nombre varchar(255) not null, precio double not null, primary key (id))
+Hibernate: alter table GarantiaExtendida add constraint FKbjleix4hk82jtyvep72rxvung foreign key (ID_PRODUCTO) references Producto
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Producto (codigo, nombre, precio, id) values (?, ?, ?, ?)
+Hibernate: select garantiaex0_.id as id1_0_, garantiaex0_.fechaFinGarantia as fechaFin2_0_, garantiaex0_.fechaSolicitudGarantia as fechaSol3_0_, garantiaex0_.nombreCliente as nombreCl4_0_, garantiaex0_.precio as precio5_0_, garantiaex0_.ID_PRODUCTO as ID_PRODU6_0_ from GarantiaExtendida garantiaex0_ cross join Producto productoen1_ where garantiaex0_.ID_PRODUCTO=productoen1_.id and productoen1_.codigo=?
+Hibernate: select productoen0_.id as id1_1_, productoen0_.codigo as codigo2_1_, productoen0_.nombre as nombre3_1_, productoen0_.precio as precio4_1_ from Producto productoen0_ where productoen0_.codigo=?
+Hibernate: select productoen0_.id as id1_1_, productoen0_.codigo as codigo2_1_, productoen0_.nombre as nombre3_1_, productoen0_.precio as precio4_1_ from Producto productoen0_ where productoen0_.codigo=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into GarantiaExtendida (fechaFinGarantia, fechaSolicitudGarantia, nombreCliente, precio, ID_PRODUCTO, id) values (?, ?, ?, ?, ?, ?)
+Hibernate: select garantiaex0_.id as id1_0_, garantiaex0_.fechaFinGarantia as fechaFin2_0_, garantiaex0_.fechaSolicitudGarantia as fechaSol3_0_, garantiaex0_.nombreCliente as nombreCl4_0_, garantiaex0_.precio as precio5_0_, garantiaex0_.ID_PRODUCTO as ID_PRODU6_0_ from GarantiaExtendida garantiaex0_ cross join Producto productoen1_ where garantiaex0_.ID_PRODUCTO=productoen1_.id and productoen1_.codigo=?
+Hibernate: select garantiaex0_.id as id1_0_, garantiaex0_.fechaFinGarantia as fechaFin2_0_, garantiaex0_.fechaSolicitudGarantia as fechaSol3_0_, garantiaex0_.nombreCliente as nombreCl4_0_, garantiaex0_.precio as precio5_0_, garantiaex0_.ID_PRODUCTO as ID_PRODU6_0_ from GarantiaExtendida garantiaex0_ cross join Producto productoen1_ where garantiaex0_.ID_PRODUCTO=productoen1_.id and productoen1_.codigo=?
+Hibernate: select garantiaex0_.id as id1_0_, garantiaex0_.fechaFinGarantia as fechaFin2_0_, garantiaex0_.fechaSolicitudGarantia as fechaSol3_0_, garantiaex0_.nombreCliente as nombreCl4_0_, garantiaex0_.precio as precio5_0_, garantiaex0_.ID_PRODUCTO as ID_PRODU6_0_ from GarantiaExtendida garantiaex0_ cross join Producto productoen1_ where garantiaex0_.ID_PRODUCTO=productoen1_.id and productoen1_.codigo=?
+Hibernate: drop table GarantiaExtendida if exists
+Hibernate: drop table Producto if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table GarantiaExtendida (id bigint not null, fechaFinGarantia timestamp, fechaSolicitudGarantia timestamp, nombreCliente varchar(255), precio double not null, ID_PRODUCTO bigint, primary key (id))
+Hibernate: create table Producto (id bigint not null, codigo varchar(255) not null, nombre varchar(255) not null, precio double not null, primary key (id))
+Hibernate: alter table GarantiaExtendida add constraint FKbjleix4hk82jtyvep72rxvung foreign key (ID_PRODUCTO) references Producto
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Producto (codigo, nombre, precio, id) values (?, ?, ?, ?)
+Hibernate: select productoen0_.id as id1_1_, productoen0_.codigo as codigo2_1_, productoen0_.nombre as nombre3_1_, productoen0_.precio as precio4_1_ from Producto productoen0_ where productoen0_.codigo=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into GarantiaExtendida (fechaFinGarantia, fechaSolicitudGarantia, nombreCliente, precio, ID_PRODUCTO, id) values (?, ?, ?, ?, ?, ?)
+Hibernate: select garantiaex0_.id as id1_0_, garantiaex0_.fechaFinGarantia as fechaFin2_0_, garantiaex0_.fechaSolicitudGarantia as fechaSol3_0_, garantiaex0_.nombreCliente as nombreCl4_0_, garantiaex0_.precio as precio5_0_, garantiaex0_.ID_PRODUCTO as ID_PRODU6_0_ from GarantiaExtendida garantiaex0_ cross join Producto productoen1_ where garantiaex0_.ID_PRODUCTO=productoen1_.id and productoen1_.codigo=?
+Hibernate: drop table GarantiaExtendida if exists
+Hibernate: drop table Producto if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table GarantiaExtendida (id bigint not null, fechaFinGarantia timestamp, fechaSolicitudGarantia timestamp, nombreCliente varchar(255), precio double not null, ID_PRODUCTO bigint, primary key (id))
+Hibernate: create table Producto (id bigint not null, codigo varchar(255) not null, nombre varchar(255) not null, precio double not null, primary key (id))
+Hibernate: alter table GarantiaExtendida add constraint FKbjleix4hk82jtyvep72rxvung foreign key (ID_PRODUCTO) references Producto
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Producto (codigo, nombre, precio, id) values (?, ?, ?, ?)
+Hibernate: select productoen0_.id as id1_1_, productoen0_.codigo as codigo2_1_, productoen0_.nombre as nombre3_1_, productoen0_.precio as precio4_1_ from Producto productoen0_ where productoen0_.codigo=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into GarantiaExtendida (fechaFinGarantia, fechaSolicitudGarantia, nombreCliente, precio, ID_PRODUCTO, id) values (?, ?, ?, ?, ?, ?)
+Hibernate: select garantiaex0_.id as id1_0_, garantiaex0_.fechaFinGarantia as fechaFin2_0_, garantiaex0_.fechaSolicitudGarantia as fechaSol3_0_, garantiaex0_.nombreCliente as nombreCl4_0_, garantiaex0_.precio as precio5_0_, garantiaex0_.ID_PRODUCTO as ID_PRODU6_0_ from GarantiaExtendida garantiaex0_ cross join Producto productoen1_ where garantiaex0_.ID_PRODUCTO=productoen1_.id and productoen1_.codigo=?
+Hibernate: drop table GarantiaExtendida if exists
+Hibernate: drop table Producto if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table GarantiaExtendida (id bigint not null, fechaFinGarantia timestamp, fechaSolicitudGarantia timestamp, nombreCliente varchar(255), precio double not null, ID_PRODUCTO bigint, primary key (id))
+Hibernate: create table Producto (id bigint not null, codigo varchar(255) not null, nombre varchar(255) not null, precio double not null, primary key (id))
+Hibernate: alter table GarantiaExtendida add constraint FKbjleix4hk82jtyvep72rxvung foreign key (ID_PRODUCTO) references Producto
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Producto (codigo, nombre, precio, id) values (?, ?, ?, ?)
+Hibernate: select garantiaex0_.id as id1_0_, garantiaex0_.fechaFinGarantia as fechaFin2_0_, garantiaex0_.fechaSolicitudGarantia as fechaSol3_0_, garantiaex0_.nombreCliente as nombreCl4_0_, garantiaex0_.precio as precio5_0_, garantiaex0_.ID_PRODUCTO as ID_PRODU6_0_ from GarantiaExtendida garantiaex0_ cross join Producto productoen1_ where garantiaex0_.ID_PRODUCTO=productoen1_.id and productoen1_.codigo=?
+Hibernate: select productoen0_.id as id1_1_, productoen0_.codigo as codigo2_1_, productoen0_.nombre as nombre3_1_, productoen0_.precio as precio4_1_ from Producto productoen0_ where productoen0_.codigo=?
+Hibernate: select productoen0_.id as id1_1_, productoen0_.codigo as codigo2_1_, productoen0_.nombre as nombre3_1_, productoen0_.precio as precio4_1_ from Producto productoen0_ where productoen0_.codigo=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into GarantiaExtendida (fechaFinGarantia, fechaSolicitudGarantia, nombreCliente, precio, ID_PRODUCTO, id) values (?, ?, ?, ?, ?, ?)
+Hibernate: select garantiaex0_.id as id1_0_, garantiaex0_.fechaFinGarantia as fechaFin2_0_, garantiaex0_.fechaSolicitudGarantia as fechaSol3_0_, garantiaex0_.nombreCliente as nombreCl4_0_, garantiaex0_.precio as precio5_0_, garantiaex0_.ID_PRODUCTO as ID_PRODU6_0_ from GarantiaExtendida garantiaex0_ cross join Producto productoen1_ where garantiaex0_.ID_PRODUCTO=productoen1_.id and productoen1_.codigo=?
+Hibernate: drop table GarantiaExtendida if exists
+Hibernate: drop table Producto if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table GarantiaExtendida (id bigint not null, fechaFinGarantia timestamp, fechaSolicitudGarantia timestamp, nombreCliente varchar(255), precio double not null, ID_PRODUCTO bigint, primary key (id))
+Hibernate: create table Producto (id bigint not null, codigo varchar(255) not null, nombre varchar(255) not null, precio double not null, primary key (id))
+Hibernate: alter table GarantiaExtendida add constraint FKbjleix4hk82jtyvep72rxvung foreign key (ID_PRODUCTO) references Producto
+Hibernate: drop table GarantiaExtendida if exists
+Hibernate: drop table Producto if exists
+Hibernate: drop sequence if exists hibernate_sequence
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create table GarantiaExtendida (id bigint not null, fechaFinGarantia timestamp, fechaSolicitudGarantia timestamp, nombreCliente varchar(255), precio double not null, ID_PRODUCTO bigint, primary key (id))
+Hibernate: create table Producto (id bigint not null, codigo varchar(255) not null, nombre varchar(255) not null, precio double not null, primary key (id))
+Hibernate: alter table GarantiaExtendida add constraint FKbjleix4hk82jtyvep72rxvung foreign key (ID_PRODUCTO) references Producto
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into Producto (codigo, nombre, precio, id) values (?, ?, ?, ?)
+Hibernate: select productoen0_.id as id1_1_, productoen0_.codigo as codigo2_1_, productoen0_.nombre as nombre3_1_, productoen0_.precio as precio4_1_ from Producto productoen0_ where productoen0_.codigo=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into GarantiaExtendida (fechaFinGarantia, fechaSolicitudGarantia, nombreCliente, precio, ID_PRODUCTO, id) values (?, ?, ?, ?, ?, ?)
+Hibernate: select garantiaex0_.id as id1_0_, garantiaex0_.fechaFinGarantia as fechaFin2_0_, garantiaex0_.fechaSolicitudGarantia as fechaSol3_0_, garantiaex0_.nombreCliente as nombreCl4_0_, garantiaex0_.precio as precio5_0_, garantiaex0_.ID_PRODUCTO as ID_PRODU6_0_ from GarantiaExtendida garantiaex0_ cross join Producto productoen1_ where garantiaex0_.ID_PRODUCTO=productoen1_.id and productoen1_.codigo=?
+]]></system-out>
+  <system-err><![CDATA[log4j:WARN No appenders could be found for logger (org.jboss.logging).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+]]></system-err>
+</testsuite>
